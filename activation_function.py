@@ -39,6 +39,23 @@ print("1 + test : ", 1+test)
 print("1 / test : ", 1/test)
 
 y = sigmoid_function(x)
-plt.plot(x,y)
-plt.ylim(-0.1, 1.1)
-plt.show()
+#plt.plot(x,y)
+#plt.ylim(-0.1, 1.1)
+#plt.show()
+
+def relu(x):
+    return np.maximum(0, x)
+
+print(relu(np.array([-1, 1, 2, -5])))
+
+def identity(x):
+    return x
+
+def softmax(input):
+    max_input = np.max(input)
+    exp_input = np.exp(input-max_input)
+    return exp_input/np.sum(exp_input)
+
+a = np.array([0.3, 2.9, 4.0])
+y = softmax(a)
+print(y)
