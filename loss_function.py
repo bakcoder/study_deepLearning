@@ -35,7 +35,7 @@ print(batch_mask)
 x_batch = x_train[batch_mask]
 t_batch = t_train[batch_mask]
 
-def cross_entropy_error(y, t):
+def cross_entropy_error_for_batch(y, t):
     if y.ndim == 1:
         t = t.reshape(1, t.size)
         y = y.reshape(1, y.size)
